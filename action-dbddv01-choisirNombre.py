@@ -45,7 +45,7 @@ def action_wrapper(hermes, intentMessage, conf):
             result_sentence = "Le résultat est Pile"
         else:
             result_sentence = "Le résulat est face"
-    elif item == 'dés':
+    elif item == 'dé':
         dice_random = random.randrange(1, 6)
         result_sentence = "Le dé tombe sur le numéro {number} ".format(number=dice_random)
     elif item == 'nombre':
@@ -59,5 +59,5 @@ def action_wrapper(hermes, intentMessage, conf):
 
 if __name__ == "__main__":
     with Hermes("localhost:1883") as h:
-        h.subscribe_intent("Dbddv01:choisirNombre", subscribe_intent_callback) \
+        h.subscribe_intent("dbddv01:choisirNombre", subscribe_intent_callback) \
 .start()
